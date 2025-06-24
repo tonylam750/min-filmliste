@@ -1,0 +1,80 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    background-image:  linear-gradient(rgba(19, 15, 15, 0.6), rgba(32, 17, 17, 0.6)), url(images/watchlist.png);
+    background-size:cover;
+    background-position: 50% 25%;
+    position: relative;
+    height: 208px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+   
+}
+
+
+.search-bar{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  height: 50px;
+  padding: 0 12px 0 40px;       
+  font-size: 1rem;
+
+  border: 3px solid #D1D5DB;
+  border-radius: 4px;
+
+  background-image: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/svgs/solid/magnifying-glass.svg');
+  background-repeat: no-repeat;
+  background-size: 1.25rem;               /* icon size */
+  background-position: 12px center;    /* 12px from the left, vertically centered */
+}
+
+
+h1{
+    font-size: 2.75rem;
+    font-weight: bolder;
+}
+
+h2{
+    font-size: 1.25rem;
+}
+
+
+main{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+    color: #DFDDDD;
+}
+
+main p{
+    font-size:1.5rem;
+    font-weight: 700;
+}
+
+
