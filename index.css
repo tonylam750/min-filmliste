@@ -8,7 +8,10 @@ html, body {
 body{
     display: flex;
     flex-direction: column;
+    background-color: #121212;
+    
 }
+
 
 header{
     background-image:  linear-gradient(rgba(19, 15, 15, 0.6), rgba(32, 17, 17, 0.6)), url(images/watchlist.png);
@@ -54,7 +57,9 @@ header{
   background-size: 1.25rem;               
   background-position: 12px center;  
   background-color: #2E2E2F;  
+  outline: none;
 }
+
 
 
 h1{
@@ -74,7 +79,7 @@ button{
 }
 
 
-main{
+.splash-main{
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -86,9 +91,51 @@ main{
     
 }
 
-main p{
+.splash-main p{
     font-size:1.5rem;
     font-weight: 700;
+}
+
+main{
+    padding: 0 60px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+
+.movie-content{
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+    margin-top: 20px;
+    color: white;
+
+    justify-content: start;
+
+    border-bottom: 1px solid white;
+
+}
+
+.movie-info{
+    display: flex;
+    gap: 20px;
+}
+
+.movie-detail{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    max-width: 400px;
+}
+
+
+img{
+    max-width: 100px;
 }
 
 
