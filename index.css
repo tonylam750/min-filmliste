@@ -1,21 +1,22 @@
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     height: 100%;
-    
+
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
     background-color: #121212;
-    
+
 }
 
 
-header{
-    background-image:  linear-gradient(rgba(19, 15, 15, 0.6), rgba(32, 17, 17, 0.6)), url(images/watchlist.png);
-    background-size:cover;
+header {
+    background-image: linear-gradient(rgba(19, 15, 15, 0.6), rgba(32, 17, 17, 0.6)), url(images/watchlist.png);
+    background-size: cover;
     background-position: 50% 25%;
     position: relative;
     height: 208px;
@@ -23,15 +24,15 @@ header{
     justify-content: space-around;
     align-items: center;
     color: rgb(219, 182, 112);
-   
+
 }
 
-a{
+a {
     color: wheat;
 }
 
 
-.search-bar{
+.search-bar {
     position: absolute;
     top: 100%;
     left: 50%;
@@ -39,90 +40,90 @@ a{
     display: flex;
     width: 100%;
     justify-content: center;
-    
+
 }
 
 
 .search-input {
-  width: 100%;
-  max-width: 400px;
-  height: 50px;
-  padding: 0 12px 0 40px;       
-  font-size: 1rem;
+    width: 100%;
+    max-width: 400px;
+    height: 50px;
+    padding: 0 12px 0 40px;
+    font-size: 1rem;
 
-  color: white;
-  
+    color: white;
 
-  border-radius: 4px 0 0 4px;
-  border: none;
 
-  background-image: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/svgs/solid/magnifying-glass.svg');
-  background-repeat: no-repeat;
-  background-size: 1.25rem;               
-  background-position: 12px center;  
-  background-color: #2E2E2F;  
-  outline: none;
+    border-radius: 4px 0 0 4px;
+    border: none;
+
+    background-image: url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/svgs/solid/magnifying-glass.svg');
+    background-repeat: no-repeat;
+    background-size: 1.25rem;
+    background-position: 12px center;
+    background-color: #2E2E2F;
+    outline: none;
 }
 
 
 
-h1{
+h1 {
     font-size: 2.75rem;
     font-weight: bolder;
 }
 
-h2{
+h2 {
     font-size: 1.25rem;
 }
 
-.search-btn{
+.search-btn {
     width: 120px;
-    border-radius:0 4px 4px 0;
+    border-radius: 0 4px 4px 0;
     border: none;
     background-color: #4B4B4B;
     cursor: pointer;
 }
 
-.watchlist-btn{
+.watchlist-btn {
     cursor: pointer;
 }
 
-button:active{
+button:active {
     background-color: beige;
 }
 
 
-.splash-main{
+.splash-main {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   
+
     color: #b6b0b0;
     background-color: #121212;
-    
+
 }
 
-.splash-main p{
-    font-size:1.5rem;
+.splash-main p {
+    font-size: 1.5rem;
     font-weight: 700;
 }
 
-main{
+main {
     padding: 0 60px;
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   
+
 }
 
 
 
 
-.movie-content{
+.movie-content {
     display: flex;
     align-items: center;
     padding: 20px 0;
@@ -136,26 +137,24 @@ main{
 
 }
 
-.movie-info{
+.movie-info {
     display: flex;
     gap: 20px;
 }
 
-.movie-detail{
+.movie-detail {
     display: flex;
     flex-direction: column;
     align-items: start;
     max-width: 400px;
-    
+
 }
 
 
-img{
+img {
     width: 125px;
 }
 
-span{
+span {
     font-size: medium;
 }
-
-

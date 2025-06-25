@@ -3,16 +3,16 @@
 const searchBtn = document.getElementById("search-btn");
 const searchInput = document.getElementById("search-input")
 
-async function renderMovies(){
-    const response = await fetch(`http://www.omdbapi.com/?apikey=ab7d24d4&s=${searchInput.value}&page=1`)
+async function renderMovies() {
+    const response = await fetch(`https://www.omdbapi.com/?apikey=ab7d24d4&s=${searchInput.value}&page=1`)
     const data = await response.json()
-    let searchHtml =""
-    
-    for (let movie of data.Search){
-        const res = await fetch(`http://www.omdbapi.com/?apikey=ab7d24d4&t=${movie.Title}`)
+    let searchHtml = ""
+
+    for (let movie of data.Search) {
+        const res = await fetch(`https://www.omdbapi.com/?apikey=ab7d24d4&t=${movie.Title}`)
         const movieDetail = await res.json()
-        
-        let html=`
+
+        let html = `
             <div class="movie-content">
                 <img src="${movie.Poster}">
                 <div class="movie-detail">
@@ -25,36 +25,36 @@ async function renderMovies(){
                     <p>${movieDetail.Plot}</p>
                 </div>
             </div>`
-        
+
         searchHtml += html
     };
 
-    document.getElementById("main").innerHTML=searchHtml
+    document.getElementById("main").innerHTML = searchHtml
     HandleAddToWatchList()
-  
- 
-    
+
+
+
     console.log(data.Search)
 
 }
-    function HandleAddToWatchList(){
-        document.querySelectorAll(".watchlist-btn").forEach(btn =>{
-        btn.addEventListener("click", ()=>{
-           
-        const cardHtml = btn.closest('.movie-content').outerHTML;
+function HandleAddToWatchList() {
+    document.querySelectorAll(".watchlist-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
 
-        let existing = JSON.parse(localStorage.getItem('watchlist') || '[]');
+            const cardHtml = btn.closest('.movie-content').outerHTML;
 
-        if (!Array.isArray(existing)) existing = [ existing ];
+            let existing = JSON.parse(localStorage.getItem('watchlist') || '[]');
 
-        if (!existing.includes(cardHtml)) {
-            existing.push(cardHtml);
-            localStorage.setItem('watchlist', JSON.stringify(existing));
-            btn.disabled = true
-        }
+            if (!Array.isArray(existing)) existing = [existing];
+
+            if (!existing.includes(cardHtml)) {
+                existing.push(cardHtml);
+                localStorage.setItem('watchlist', JSON.stringify(existing));
+                btn.disabled = true
+            }
         })
     })
- }
+}
 
 
 
@@ -63,84 +63,84 @@ async function renderMovies(){
 searchBtn.addEventListener("click", renderMovies)
 
 // Poster
-// : 
+// :
 // "https://m.media-amazon.com/images/M/MV5BODIyMDdhNTgtNDlmOC00MjUxLWE2NDItODA5MTdkNzY3ZTdhXkEyXkFqcGc@._V1_SX300.jpg"
 // Title
-// : 
+// :
 // "Batman Begins"
 // Type
-// : 
+// :
 // "movie"
 // Year
-// : 
+// :
 // "2005"
 // imdbID
-// : 
+// :
 // "tt0372784"
 
 // Actors
-// : 
+// :
 // "Kevin Conroy, Loren Lester, Efrem Zimbalist Jr."
 // Awards
-// : 
+// :
 // "Won 1 Primetime Emmy. 5 wins & 19 nominations total"
 // Country
-// : 
+// :
 // "United States"
 // Director
-// : 
+// :
 // "N/A"
 // Genre
-// : 
+// :
 // "Animation, Action, Adventure"
 // Language
-// : 
+// :
 // "English"
 // Metascore
-// : 
+// :
 // "N/A"
 // Plot
-// : 
+// :
 // "Follows the adventures of billionaire playboy Bruce Wayne who is secretly the vigilante known as Batman, whom with help from various side kicks and allies fights a rouges gallery of criminals and super-villains in Gotham City."
 // Poster
-// : 
+// :
 // "https://m.media-amazon.com/images/M/MV5BYjgwZWUzMzUtYTFkNi00MzM0LWFkMWUtMDViMjMxNGIxNDUxXkEyXkFqcGc@._V1_SX300.jpg"
 // Rated
-// : 
+// :
 // "TV-PG"
 // Ratings
-// : 
+// :
 // [{…}]
 // Released
-// : 
+// :
 // "05 Sep 1992"
 // Response
-// : 
+// :
 // "True"
 // Runtime
-// : 
+// :
 // "23 min"
 // Title
-// : 
+// :
 // "Batman: The Animated Series"
 // Type
-// : 
+// :
 // "series"
 // Writer
-// : 
+// :
 // "Bill Finger, Bob Kane, Eric Radomski"
 // Year
-// : 
+// :
 // "1992–1995"
 // imdbID
-// : 
+// :
 // "tt0103359"
 // imdbRating
-// : 
+// :
 // "9.0"
 // imdbVotes
-// : 
+// :
 // "127,724"
 // totalSeasons
-// : 
+// :
 // "4"
