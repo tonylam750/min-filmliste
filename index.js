@@ -1,37 +1,64 @@
 
-const searchBtn = document.getElementById("search-btn")
-const searchInput = document.getElementById("search-input")
 
+const searchBtn = document.getElementById("search-btn");
+const searchInput = document.getElementById("search-input")
 
 async function renderMovies(){
     const response = await fetch(`http://www.omdbapi.com/?apikey=ab7d24d4&s=${searchInput.value}&page=1`)
     const data = await response.json()
-    let html =""
+    let searchHtml =""
     
     for (let movie of data.Search){
         const res = await fetch(`http://www.omdbapi.com/?apikey=ab7d24d4&t=${movie.Title}`)
         const movieDetail = await res.json()
         
-        html+=`
+        let html=`
             <div class="movie-content">
                 <img src="${movie.Poster}">
                 <div class="movie-detail">
-                    <h2>${movie.Title}</h2>
+                    <h2>${movie.Title} <span><i class="fa-solid fa-star" style="color: #FFD43B;"></i> ${movieDetail.imdbRating}</span> </h2>
                     <div class="movie-info">
                         <p>${movieDetail.Runtime}</p>
                         <p>${movieDetail.Genre}</p>
-                        <p>Watchlist</p>
+                        <p><button id="watchlist-btn" class="watchlist-btn">+</button></p>
                     </div>
                     <p>${movieDetail.Plot}</p>
                 </div>
             </div>`
+        
+        searchHtml += html
     };
 
-    document.getElementById("main").innerHTML=html
+    document.getElementById("main").innerHTML=searchHtml
+    HandleAddToWatchList()
+  
+ 
     
     console.log(data.Search)
 
 }
+    function HandleAddToWatchList(){
+        document.querySelectorAll(".watchlist-btn").forEach(btn =>{
+        btn.addEventListener("click", ()=>{
+           
+        const cardHtml = btn.closest('.movie-content').outerHTML;
+
+        let existing = JSON.parse(localStorage.getItem('watchlist') || '[]');
+
+        if (!Array.isArray(existing)) existing = [ existing ];
+
+        if (!existing.includes(cardHtml)) {
+            existing.push(cardHtml);
+            localStorage.setItem('watchlist', JSON.stringify(existing));
+            btn.disabled = true
+        }
+        })
+    })
+ }
+
+
+
+
 
 searchBtn.addEventListener("click", renderMovies)
 

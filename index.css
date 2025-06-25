@@ -22,8 +22,12 @@ header{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    color: white;
+    color: rgb(219, 182, 112);
    
+}
+
+a{
+    color: wheat;
 }
 
 
@@ -71,11 +75,20 @@ h2{
     font-size: 1.25rem;
 }
 
-button{
+.search-btn{
     width: 120px;
     border-radius:0 4px 4px 0;
     border: none;
     background-color: #4B4B4B;
+    cursor: pointer;
+}
+
+.watchlist-btn{
+    cursor: pointer;
+}
+
+button:active{
+    background-color: beige;
 }
 
 
@@ -107,6 +120,8 @@ main{
 }
 
 
+
+
 .movie-content{
     display: flex;
     align-items: center;
@@ -131,11 +146,16 @@ main{
     flex-direction: column;
     align-items: start;
     max-width: 400px;
+    
 }
 
 
 img{
-    max-width: 100px;
+    width: 125px;
+}
+
+span{
+    font-size: medium;
 }
 
 
